@@ -3,19 +3,39 @@
  */
 
 // Add function to preload the images
-
-
-
+function preloadImages(imageArray) {
+    for (let i = 0; i < imageArray.length; i++) {
+        const img = new Image();
+        img.src = imageArray[i];
+    }
+}
 
 // Add function to switch the image
-
-
-
+function startImageSwitcher(imageArray) {
+    let currentIndex = 0;
+    const imageElement = document.querySelector('#main-image img');
+    
+    return function() {
+        currentIndex = (currentIndex + 1) % imageArray.length;
+        imageElement.src = imageArray[currentIndex];
+    };
+}
 
 // This will run when the page is done loading
 window.onload = function() {
-    /* Complete this code to get the list/array of images to cycle through. Preload the images
-        and then start the process of switching the image every 3 seconds.  */
-
-
+    // Array of images to cycle through
+    const imageArray = [
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner3.jpg'
+    ];
+    
+    // Preload the images
+    preloadImages(imageArray);
+    
+    // Create the switcher function
+    const switchImage = startImageSwitcher(imageArray);
+    
+    // Start switching images every 3 seconds
+    setInterval(switchImage, 3000);
 }
