@@ -4,7 +4,8 @@ function showImage(e) {
     const detailsSection = document.getElementById('details');
     const img = e.target;
     
-    // Get the image file name
+    // Get the image file name by using split() to break down URL and stores its elements in an array.
+    // pop() returns the last element of an array
     const fileName = img.src.split('/').pop();
     
     // Get the image details from data-details attribute
