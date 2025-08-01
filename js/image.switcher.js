@@ -2,7 +2,7 @@
    are images/banner1.jpg, images/banner2.jpg, and images/banner3.jpg
  */
 
-// Add function to preload the images
+// Function to preload the images
 function preloadImages(imageArray) {
     for (let i = 0; i < imageArray.length; i++) {
         const img = new Image();
@@ -10,7 +10,7 @@ function preloadImages(imageArray) {
     }
 }
 
-// Add function to switch the image
+// Function to switch the image
 function startImageSwitcher(imageArray) {
     let currentIndex = 0;
     const imageElement = document.querySelector('#main-image img');
